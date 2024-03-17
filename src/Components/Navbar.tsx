@@ -3,7 +3,7 @@ import React from 'react'
 
 export const Navbar = () => {
     return (
-        <div className="navbar bg-neutral-100">
+        <div className="navbar bg-slate-800">
             <div className="container">
                 <div className="flex-1">
                     <Link href="/">Icon</Link>
