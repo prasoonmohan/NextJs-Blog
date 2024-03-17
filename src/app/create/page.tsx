@@ -1,4 +1,5 @@
 "use client"
+import BackButton from '@/Components/BackButton'
 import FormPost from '@/Components/FormPost'
 import { FormInputPosts } from '@/types'
 import { log } from 'console'
@@ -11,6 +12,7 @@ const page = () => {
     }
     return (
         <div>
+            <BackButton />
             <h3 className="text-2xl my-4 font-bold text-center">Add new post</h3>
             <FormPost submit={handleCreatePost} />
         </div>
