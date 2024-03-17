@@ -4,10 +4,11 @@ import React, { FC } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
 
 interface FormPostProps {
-    submit: SubmitHandler<FormInputPosts>
+    submit: SubmitHandler<FormInputPosts>,
+    isEditing?: boolean
 }
 
-const FormPost: FC<FormPostProps> = ({ submit }) => {
+const FormPost: FC<FormPostProps> = ({ submit, isEditing = false }) => {
     const { register, handleSubmit } = useForm<FormInputPosts>();
 
     return (
@@ -25,7 +26,9 @@ const FormPost: FC<FormPostProps> = ({ submit }) => {
                 <option>Python</option>
             </select>
 
-            <button type="submit" className='btn btn-primary w-full max-w-lg'>Create</button>
+            <button type="submit" className='btn btn-primary w-full max-w-lg'>
+                {isEditing ? "Update" : "Submit"}
+            </button>
         </form>
     )
 }
